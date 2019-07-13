@@ -1,0 +1,39 @@
+.clock {
+    margin-top: 150px;
+    width: 600px;
+    height: 250px;
+    background: #272e37;
+    border-radius: 4px;
+}
+.clock-screen {
+    margin: 35px 0 0 50px;
+    width: 500px;
+    height: 180px;
+    background: #0f161f;
+    color: #cacaca;
+    border-radius: 8px;
+}
+
+ul.days {
+    padding: 10px 5px 0 0;
+    color: #343a41;
+}
+ul.days li {
+    display: inline;
+    padding: 0 10px 0 10px;
+    list-style: none;
+}
+.active {
+    color: #cacaca;
+}
+
+ul.time {
+    margin: 0;
+    padding: 0 5px 0 0;
+    font-size: 80px
+}
+ul.time li {
+    display: inline;
+    padding: 0 10px 0 10px;
+    list-style: none;
+}
