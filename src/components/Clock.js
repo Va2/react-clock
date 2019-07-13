@@ -53,7 +53,7 @@ class Clock extends Component {
                     <ul className="time">
                         <li>{(this.state.hour < 10 ? '0' : '') + this.state.hour}</li>:
                         <li>{(this.state.minute < 10 ? '0' : '') + this.state.minute}</li>{/*:*/}
-                        {/* <li>{this.state.second}</li> */}
+                        {/* <li>{(this.state.second < 10 ? '0' : '') + this.state.second}</li> */}
                     </ul>
                 </div>
             </div>
