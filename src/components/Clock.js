@@ -10,7 +10,7 @@ class Clock extends Component {
         this.state = {
           day: newDate.getDay(),
           hour: newDate.getHours(),
-          minute: String(newDate.getMinutes()).padStart(2, "0"), // Fill the minutes with a leading zero
+          minute: newDate.getMinutes(),
           second: newDate.getSeconds()
         };
     }
@@ -30,7 +30,7 @@ class Clock extends Component {
         this.setState({
             day: new Date().getDay(),
             hour: new Date().getHours(),
-            minute: String(newDate.getMinutes()).padStart(2, "0"),  // Fill the minutes with a leading zero
+            minute:  new Date().getMinutes(),
             second: new Date().getSeconds()
         });
     }
@@ -41,22 +41,20 @@ class Clock extends Component {
 
                 <div className="clock-screen">
                     <ul className="days">
-                        <li id="mon" className={this.state.day === 1 ? 'active' : ''}>Mon</li>
-                        <li id="tue" className={this.state.day === 2 ? 'active' : ''}>Tue</li>
-                        <li id="wed" className={this.state.day === 3 ? 'active' : ''}>Wed</li>
-                        <li id="thu" className={this.state.day === 4 ? 'active' : ''}>Thu</li>
-                        <li id="fri" className={this.state.day === 5 ? 'active' : ''}>Fri</li>
-                        <li id="sat" className={this.state.day === 6 ? 'active' : ''}>Sat</li>
-                        <li id="sun" className={this.state.day === 0 ? 'active' : ''}>Sun</li>
+                        <li className={this.state.day === 1 ? 'active' : ''}>Mon</li>
+                        <li className={this.state.day === 2 ? 'active' : ''}>Tue</li>
+                        <li className={this.state.day === 3 ? 'active' : ''}>Wed</li>
+                        <li className={this.state.day === 4 ? 'active' : ''}>Thu</li>
+                        <li className={this.state.day === 5 ? 'active' : ''}>Fri</li>
+                        <li className={this.state.day === 6 ? 'active' : ''}>Sat</li>
+                        <li className={this.state.day === 0 ? 'active' : ''}>Sun</li>
                     </ul>
 
                     <ul className="time">
-                        <li>{this.state.hour}</li>:
-                        <li>{this.state.minute}</li>{/*:*/}
+                        <li>{(this.state.hour < 10 ? '0' : '') + this.state.hour}</li>:
+                        <li>{(this.state.minute < 10 ? '0' : '') + this.state.minute}</li>{/*:*/}
                         {/* <li>{this.state.second}</li> */}
                     </ul>
-
-                    {/* Day {this.state.day} <br /> */}
                 </div>
             </div>
         )
