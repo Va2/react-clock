@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import './Clock.css';
 
+let newDate = new Date();
+
 class Clock extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            day: new Date().getDay(),
-            hour: new Date().getHours(),
-            minute: new Date().getMinutes(),
-            second: new Date().getSeconds()
+          day: newDate.getDay(),
+          hour: newDate.getHours(),
+          minute: String(newDate.getMinutes()).padStart(2, "0"), // Fill the minutes with a leading zero
+          second: newDate.getSeconds()
         };
     }
 
@@ -28,7 +30,7 @@ class Clock extends Component {
         this.setState({
             day: new Date().getDay(),
             hour: new Date().getHours(),
-            minute: new Date().getMinutes(),
+            minute: String(newDate.getMinutes()).padStart(2, "0"),  // Fill the minutes with a leading zero
             second: new Date().getSeconds()
         });
     }
